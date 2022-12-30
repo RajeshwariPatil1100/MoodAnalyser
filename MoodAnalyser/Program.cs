@@ -5,9 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-
 namespace MoodAnalyser
 {
     class program
@@ -15,10 +12,8 @@ namespace MoodAnalyser
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Mood Analyzer");
-            MoodAnalyser mo = new MoodAnalyser("i am SAD");
+            MoodAnalyser mo = new MoodAnalyser("i am in natural mood");
             mo.AnalyseMood();
-
-
         }
     }
 }
