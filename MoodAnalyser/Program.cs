@@ -1,4 +1,5 @@
 ﻿using MoodAnalyser;
+using MoodAnalyzer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace MoodAnalyser
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Mood Analyzer");
-            MoodAnalyser mo = new MoodAnalyser("i am in natural mood");
+            MoodAnalyserrr mo = new MoodAnalyserrr(null);
             mo.AnalyseMood();
         }
     }

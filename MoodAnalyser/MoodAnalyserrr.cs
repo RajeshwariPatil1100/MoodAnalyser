@@ -1,17 +1,21 @@
-﻿using System;
+﻿
+using MoodAnalyzer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyser
+
+namespace MoodAnalyzer
 {
-    internal class MoodAnalyser
+    public class MoodAnalyserrr 
     {
+
         public string message;
 
 
-        public MoodAnalyser(string message)
+        public MoodAnalyserrr(string message)
         {
             this.message = message;
         }
@@ -20,6 +24,10 @@ namespace MoodAnalyser
         {
             try
             {
+                if (string.IsNullOrEmpty(message))
+                {
+                    throw new MoodAnalysisException("Mood cannot be null or empty", MoodAnalysisError.NULL_OR_EMPTY_MOOD);
+                }
 
                 if (this.message.Contains("SAD"))
                 {
@@ -35,10 +43,10 @@ namespace MoodAnalyser
                 }
                 else
                 {
-                    throw new InvalidMoodException("Invalid mood provided");
+                    throw new MoodAnalysisException("Invalid mood provided", MoodAnalysisError.INVALID_MOOD);
                 }
             }
-            catch (InvalidMoodException ex)
+            catch (MoodAnalysisException ex)
             {
                 Console.WriteLine(ex.Message);
                 return "Unknown Mood";
